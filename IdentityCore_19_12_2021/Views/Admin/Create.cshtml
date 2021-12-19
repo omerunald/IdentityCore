@@ -1,0 +1,32 @@
+﻿
+@using IdentityCore_19_12_2021.Model
+@model RegisterModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="bg-primary text-white p-1 m-1">
+    <h2>Create User</h2>
+</div>
+
+<form asp-controller="Admin" asp-action="Create" method="post">
+    <div class="text-danger" asp-validation-summary="All">
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="UserName">UserName</label>
+        <input asp-for="UserName" class="form-control" />
+
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" class="form-control" />
+
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <input type="submit" value="Create" class="btn btn-primary" />
+    <input asp-action="Index" value="Cancel" class="btn btn-danger" />
+</form>
